@@ -1,4 +1,4 @@
-const imageFolderUrl = 'https://github.com/editordnyanada/dnyanada2024/blob/64a1e2f426e442a173df3a61527548a2e1dc976d/images';
+const imageFolderUrl = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/images/';
 const totalPages = 344;
 let currentPage = 1;
 
@@ -7,7 +7,8 @@ const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
 
 function updateImage() {
-    bookImage.src = `${imageFolderUrl}page${currentPage}.jpg`;
+    const pageNumber = String(currentPage).padStart(3, '0');
+    bookImage.src = `${imageFolderUrl}Dnayanda2024_Page_${pageNumber}.jpg`;
 }
 
 prevButton.addEventListener('click', () => {
