@@ -10,32 +10,23 @@ body {
 
 #flipbook {
     position: relative;
-    perspective: 1000px; /* Set perspective for 3D effect */
     max-width: 90vw; /* Limit the maximum width to 90% of the viewport width */
     max-height: 90vh; /* Limit the maximum height to 90% of the viewport height */
     overflow: hidden; /* Hide overflow to prevent scrollbars */
 }
 
 #flipbook-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transform-origin: bottom right; /* Set origin for the flip effect */
-    transition: transform 0.8s ease-in-out; /* Smooth transition for flip effect */
+    transition: transform 0.6s ease-in-out; /* Smooth transition for sliding effect */
+    transform: translateX(0%); /* Start position */
 }
 
 #bookImage {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover; /* Cover the area while preserving aspect ratio */
-    backface-visibility: hidden; /* Hide the back side of the element */
-}
-
-/* Flip effect */
-.flip {
-    transform: rotateX(0deg) rotateY(180deg); /* Rotate the container for the flip effect */
 }
 
 button {
