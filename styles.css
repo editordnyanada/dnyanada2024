@@ -22,7 +22,7 @@ body {
 
 #bookImage {
     max-width: 100%;
-    max-height: 80vh; /* Limit height to 80% of the viewport height */
+    max-height: 70vh; /* Limit height to 80% of the viewport height */
     width: auto;
     height: auto;
     display: block; /* Ensure image is displayed as a block element */
