@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const images = [
         'https://github.com/editordnyanada/dnyanada2024/blob/main/images/Dnayanda%202024_Page_001.jpg',
-       
+        'https://github.com/editordnyanada/dnyanada2024/blob/main/images/Dnayanda%202024_Page_002.jpg'
         // Add more image URLs
     ];
 
