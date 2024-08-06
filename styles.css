@@ -4,48 +4,43 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f0f0f0;
+}
+
+#flipbook-container {
+    display: flex;
+    align-items: center;
 }
 
 #flipbook {
-    text-align: center;
-    background-color: #fff; /* White background for the flipbook */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    max-width: 90vw; /* Limit the maximum width to 90% of the viewport width */
-    max-height: 90vh; /* Limit the maximum height to 90% of the viewport height */
-    overflow: hidden; /* Hide overflow to prevent scrollbars */
-    position: relative; /* Ensure buttons are positioned correctly */
+    width: 80%;
+    height: 80vh; /* Set a fixed height to avoid overflow */
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#bookImage {
+.page {
     max-width: 100%;
-    max-height: 80vh; /* Limit height to 80% of the viewport height */
-    width: auto;
-    height: auto;
-    display: block; /* Ensure image is displayed as a block element */
-    margin: 0 auto; /* Center the image horizontally */
+    max-height: 100%;
+    object-fit: contain;
+    display: none; /* Hide all images initially */
+    transition: transform 0.2s ease; /* Smooth zoom transition */
 }
 
-button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
+.nav-btn {
+    background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 4px;
-    background-color: #007bff; /* Bootstrap blue color */
-    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-#pageIndicator {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #666;
+.nav-btn:hover {
+    background-color: #0056b3;
 }

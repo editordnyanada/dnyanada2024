@@ -376,3 +376,21 @@ nextButton.addEventListener('click', () => {
 
 // Initialize with the first page
 updateImage();
+
+// Zoom functionality
+let scale = 1;
+const zoomStep = 0.1;
+const minScale = 0.5;
+const maxScale = 3;
+
+flipbook.addEventListener('wheel', (event) => {
+    if (event.deltaY < 0) {
+        // Zoom in
+        scale = Math.min(scale + zoomStep, maxScale);
+    } else {
+        // Zoom out
+        scale = Math.max(scale - zoomStep, minScale);
+    }
+    pages[currentPage].style.transform = `scale(${scale})`;
+    event.preventDefault();
+});
