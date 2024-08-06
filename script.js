@@ -1,24 +1,21 @@
-let currentPage = 1;
-const totalPages = 344; // Set this to the total number of pages in your PDF
+document.addEventListener("DOMContentLoaded", function() {
+    const images = [
+        'https://github.com/your-username/your-repo/raw/main/images/image1.jpg',
+        'https://github.com/your-username/your-repo/raw/main/images/image2.jpg',
+        // Add more image URLs
+    ];
 
-function updatePage() {
-    document.getElementById('flipbook-img').src = `page${currentPage}.jpg`;
-    document.getElementById('page-number').textContent = currentPage;
-}
+    const flipbook = document.getElementById('flipbook');
 
-function nextPage() {
-    if (currentPage < totalPages) {
-        currentPage++;
-        updatePage();
-    }
-}
+    images.forEach((src, index) => {
+        const page = document.createElement('div');
+        page.className = 'page';
+        page.style.backgroundImage = `url(${src})`;
+        page.style.zIndex = images.length - index;
+        flipbook.appendChild(page);
 
-function prevPage() {
-    if (currentPage > 1) {
-        currentPage--;
-        updatePage();
-    }
-}
-
-// Initialize flipbook
-updatePage();
+        page.addEventListener('click', () => {
+            page.classList.toggle('flipped');
+        });
+    });
+});
