@@ -1,5 +1,5 @@
 let currentPage = 1;
-const totalPages = 10; // Set this to the total number of pages in your PDF
+const totalPages = 344; // Set this to the total number of pages in your PDF
 
 function updatePage() {
     document.getElementById('flipbook-img').src = `page${currentPage}.jpg`;
