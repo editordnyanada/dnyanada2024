@@ -8,8 +8,8 @@ body {
 }
 
 #flipbook {
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
     border: 1px solid #ccc;
     position: relative;
     overflow: hidden;
@@ -17,6 +17,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-shrink=0;
 }
 
 .page {
