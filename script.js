@@ -16,15 +16,19 @@ const currentPageElement = document.getElementById('currentPage');
 const totalPagesElement = document.getElementById('totalPages');
 
 function updateImage() {
-    // Add flip class for animation
-    bookImage.classList.add('flip');
+    // Add flip-out class to initiate the flip animation
+    bookImage.classList.add('flip-out');
 
-    // After the animation duration, update the image source and remove flip class
+    // After the animation duration, update the image source and apply the flip-in animation
     setTimeout(() => {
         bookImage.src = imageUrls[currentPage];
-        bookImage.classList.remove('flip');
+        bookImage.classList.remove('flip-out');
+        bookImage.classList.add('flip-in');
         currentPageElement.textContent = currentPage + 1; // Display page numbers as 1-based
         totalPagesElement.textContent = imageUrls.length;
+        
+        // Remove flip-in class after animation to prepare for the next flip
+        setTimeout(() => bookImage.classList.remove('flip-in'), 500);
     }, 500); // Duration should match the CSS transition duration
 }
 

@@ -30,6 +30,38 @@ body {
     transition: transform 0.5s ease; /* Smooth transition for flip effect */
 }
 
+/* Keyframes for flip animation */
+@keyframes flipIn {
+    from {
+        transform: rotateY(-180deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flipOut {
+    from {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* Apply flip animations */
+.flip-in {
+    animation: flipIn 0.5s forwards;
+}
+
+.flip-out {
+    animation: flipOut 0.5s forwards;
+}
+
 button {
     padding: 10px;
     margin: 10px;
