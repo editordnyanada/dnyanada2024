@@ -9,24 +9,24 @@ body {
 }
 
 #flipbook {
-    position: relative;
+    text-align: center;
+    background-color: #fff; /* White background for the flipbook */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
     max-width: 90vw; /* Limit the maximum width to 90% of the viewport width */
     max-height: 90vh; /* Limit the maximum height to 90% of the viewport height */
     overflow: hidden; /* Hide overflow to prevent scrollbars */
-}
-
-#flipbook-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease-in-out; /* Smooth transition for sliding effect */
-    transform: translateX(0%); /* Start position */
+    position: relative; /* Ensure buttons are positioned correctly */
 }
 
 #bookImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the area while preserving aspect ratio */
+    max-width: 100%;
+    max-height: 80vh; /* Limit height to 80% of the viewport height */
+    width: auto;
+    height: auto;
+    display: block; /* Ensure image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 button {
