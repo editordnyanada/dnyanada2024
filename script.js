@@ -8,7 +8,9 @@ const imageUrls = [
 ];
 
 let currentPage = 0;
+let isFlipping = false;
 
+const flipbookContainer = document.getElementById('flipbook-container');
 const bookImage = document.getElementById('bookImage');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
@@ -16,20 +18,20 @@ const currentPageElement = document.getElementById('currentPage');
 const totalPagesElement = document.getElementById('totalPages');
 
 function updateImage() {
-    // Add flip-out class to initiate the flip animation
-    bookImage.classList.add('flip-out');
+    if (isFlipping) return; // Prevent overlapping animations
+    isFlipping = true;
 
-    // After the animation duration, update the image source and apply the flip-in animation
+    // Add flip class to start the flip animation
+    flipbookContainer.classList.add('flip');
+
+    // After the flip animation, update the image source and reset the flip
     setTimeout(() => {
         bookImage.src = imageUrls[currentPage];
-        bookImage.classList.remove('flip-out');
-        bookImage.classList.add('flip-in');
+        flipbookContainer.classList.remove('flip');
+        isFlipping = false;
         currentPageElement.textContent = currentPage + 1; // Display page numbers as 1-based
         totalPagesElement.textContent = imageUrls.length;
-        
-        // Remove flip-in class after animation to prepare for the next flip
-        setTimeout(() => bookImage.classList.remove('flip-in'), 500);
-    }, 500); // Duration should match the CSS transition duration
+    }, 800); // Duration should match the CSS transition duration
 }
 
 prevButton.addEventListener('click', () => {
