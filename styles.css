@@ -20,8 +20,9 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease-in-out; /* Smooth transition for flip effect */
     transform-style: preserve-3d;
+    transform-origin: bottom right; /* Set origin for the flip effect */
+    transition: transform 0.8s ease-in-out; /* Smooth transition for flip effect */
 }
 
 #bookImage {
@@ -34,7 +35,7 @@ body {
 
 /* Flip effect */
 .flip {
-    transform: rotateY(180deg); /* Rotate the flipbook container for the flip effect */
+    transform: rotateX(0deg) rotateY(180deg); /* Rotate the container for the flip effect */
 }
 
 button {
